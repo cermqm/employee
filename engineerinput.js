@@ -6,7 +6,7 @@ inquirer.registerPrompt('recursive', require('inquirer-recursive'));
 
 console.log("in engineerinput.js")
 
-function engineerInput() {
+function engineerInput(e) {
 
     inquirer.prompt([{
         type: 'recursive',
@@ -47,21 +47,25 @@ function engineerInput() {
             }
         }]
     }]).then(async(response) => {
+        // let e = [];
+        console.log("response.engineers = ", response.engineers);
 
-        console.log("response.engineers = ", response.engineers)
+        // console.log("response.engineers[0].eName = " + response.engineers[0].eName);
+        // console.log("response.engineers[0].eId = " + response.engineers[0].eId);
+        // console.log("response.engineers[0].eEmail = " + response.engineers[0].eEmail);
+        // console.log("response.engineers[0].eGitHubID = " + response.engineers[0].eGitHubID);
 
-        // console.log("response.eName = " + response.eName);
-        // console.log("response.eID = " + response.eID);
-        // console.log("response.eEmail = " + response.eEmail);
-        // console.log("response.eGitHubID = " + response.eGitHubID);
+        for (let i = 0; i < response.engineers.length; i++) {
+            e[i + 1] = new Engineer(response.engineers[i].eName, response.engineers[i].eID, response.engineers[i].eEmail, response.engineers[i].eGitHubID);
+            // console.log("e[i].name = " + e[i + 1].name);
+            // console.log("e[i].id = " + e[i + 1].id);
+            // console.log("e[i].email = " + e[i + 1].email);
+            // console.log("e[i].github = " + e[i + 1].github);
+            // console.log("e[i].role = " + e[i + 1].role);
+            internInput(e);
+        }
 
-        // let e = new Engineer(response.eName, response.eID, response.eEmail, response.eGitHubID);
-
-        // console.log("e.name = " + e.name);
-        // console.log("e.id = " + e.id);
-        // console.log("e.email = " + e.email);
-        // console.log("e.github = " + e.github);
-        // internInput();
+        // console.log("e = ", e);
 
     });
 

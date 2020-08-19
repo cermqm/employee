@@ -30,19 +30,20 @@ function managerInput() {
             }
         ])
         .then(async(response) => {
+            let e = [];
 
-            console.log("response.emName = " + response.emName);
-            console.log("response.emID = " + response.emID);
-            console.log("response.emEmail = " + response.emEmail);
-            console.log("response.emofficeNumber = " + response.emofficeNumber);
+            // console.log("response.emName = " + response.emName);
+            // console.log("response.emID = " + response.emID);
+            // console.log("response.emEmail = " + response.emEmail);
+            // console.log("response.emofficeNumber = " + response.emofficeNumber);
 
-            let em = new Manager(response.emName, response.emID, response.emEmail, response.emofficeNumber);
+            e[0] = new Manager(response.emName, response.emID, response.emEmail, response.emofficeNumber);
 
-            console.log("em.name = " + em.name);
-            console.log("em.id = " + em.id);
-            console.log("em.email = " + em.email);
-            console.log("em.emofficeNumber = " + em.emofficeNumber);
-            engineerInput();
+            // console.log("e[0].name = " + e[0].name);
+            // console.log("e[0].id = " + e[0].id);
+            // console.log("e[0].email = " + e[0].email);
+            // console.log("e[0].emofficeNumber = " + e[0].emofficeNumber);
+            engineerInput(e);
         });
 
 }
