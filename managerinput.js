@@ -1,9 +1,13 @@
+// This javascript file gathers the manager data, adds to the e array and calls the next function.
+
 const inquirer = require("inquirer");
 const Engineer = require("./lib/Manager");
 const Manager = require("./lib/Manager");
 const engineerInput = require("./engineerinput");
 
 console.log("in managerinput.js")
+
+// Prompts the user for the manager input.
 
 function managerInput() {
 
@@ -32,17 +36,11 @@ function managerInput() {
         .then(async(response) => {
             let e = [];
 
-            // console.log("response.emName = " + response.emName);
-            // console.log("response.emID = " + response.emID);
-            // console.log("response.emEmail = " + response.emEmail);
-            // console.log("response.emofficeNumber = " + response.emofficeNumber);
+            // Adds manager info to the e Array.
 
             e[0] = new Manager(response.emName, response.emID, response.emEmail, response.emofficeNumber);
 
-            // console.log("e[0].name = " + e[0].name);
-            // console.log("e[0].id = " + e[0].id);
-            // console.log("e[0].email = " + e[0].email);
-            // console.log("e[0].emofficeNumber = " + e[0].emofficeNumber);
+            // Calls the engineerInput function and passes the array e.
             engineerInput(e);
         });
 

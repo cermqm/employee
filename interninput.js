@@ -1,11 +1,16 @@
+// This javascript file is used to gather the intern employee data and will prompt to add additional.
+
+
 const inquirer = require("inquirer");
 const Intern = require("./lib/Intern");
 const Render = require("./lib/htmlRenderer");
 
-console.log("in interninput.js")
+// console.log("in interninput.js")
 
 function internInput(e) {
     let el = e.length
+
+    // This gathers the user input for intern.
 
     inquirer.prompt([{
         type: 'recursive',
@@ -30,23 +35,18 @@ function internInput(e) {
         }]
     }]).then(async(response) => {
 
-        console.log("response.intern", response.intern);
-        console.log("response.intern.length = ", response.intern.length)
+        // This loops through and adds interns to the e Array.
 
         for (let i = 0; i < response.intern.length; i++) {
             e[i + el + 1] = new Intern(response.intern[i].iName, response.intern[i].iID, response.intern[i].iEmail, response.intern[i].iSchool);
 
-            console.log("e[i + el + 1].name = " + e[i + el + 1].name);
-            console.log("e[i + el + 1].id = " + e[i + el + 1].id);
-            console.log("e[i + el + 1].email = " + e[i + el + 1].email);
-            console.log("e[i + el + 1].github = " + e[i + el + 1].School);
-            console.log("e[i + el + 1].role = " + e[i + el + 1].role);
-
         }
 
-        console.log("e = ", e);
+        // console.log("e = ", e);
+
+        // This calls render and passes it the array e.
+
         let outputhtml = Render(e);
-        // console.log("outputhtml = ", outputhtml);
 
     });
 

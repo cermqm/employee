@@ -1,10 +1,14 @@
+// This javascript file is used to gather the engineer employee data and will prompt to add additional.
+
 const inquirer = require("inquirer");
 const Engineer = require("./lib/Engineer");
 const internInput = require("./interninput");
 inquirer.registerPrompt('recursive', require('inquirer-recursive'));
 
 
-console.log("in engineerinput.js")
+// console.log("in engineerinput.js")
+
+// This gathers user input for engineer.
 
 function engineerInput(e) {
 
@@ -47,27 +51,18 @@ function engineerInput(e) {
             }
         }]
     }]).then(async(response) => {
-        // let e = [];
-        // console.log("response.engineers = ", response.engineers);
 
-        // console.log("response.engineers[0].eName = " + response.engineers[0].eName);
-        // console.log("response.engineers[0].eId = " + response.engineers[0].eId);
-        // console.log("response.engineers[0].eEmail = " + response.engineers[0].eEmail);
-        // console.log("response.engineers[0].eGitHubID = " + response.engineers[0].eGitHubID);
+        // This loops through and adds the engineers to the e Array.
 
         for (let i = 0; i < response.engineers.length; i++) {
-            console.log("response.engineers.length = " + response.engineers.length)
             e[i + 1] = new Engineer(response.engineers[i].eName, response.engineers[i].eID, response.engineers[i].eEmail, response.engineers[i].eGitHubID);
 
-            console.log("e[i].name = " + e[i + 1].name);
-            console.log("e[i].id = " + e[i + 1].id);
-            console.log("e[i].email = " + e[i + 1].email);
-            console.log("e[i].github = " + e[i + 1].github);
-            console.log("e[i].role = " + e[i + 1].role);
-
         }
+        // Calls internInput and passes array e.
+
         internInput(e);
-        console.log("e = ", e);
+
+        // console.log("e = ", e);
 
     });
 
