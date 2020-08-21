@@ -1,0 +1,102 @@
+body {
+    /* font-size: 1vw; */
+    background: url("employee.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+/* html {
+    background: url("employee.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+} */
+
+.jumbotron {
+    background-image: url("employee.png");
+    background: url("employee.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+    border-bottom: 1px solid black;
+}
+
+.card {
+    margin: 20px;
+}
+
+.card-header {
+    background-color: royalblue;
+    color: white;
+}
+
+.team-area {
+    /* display: flex; */
+    flex-wrap: wrap;
+    /* max-width: 100%; */
+}
+
+body {
+    max-width: 100%;
+}
+
+.container {
+    margin: 0;
+    max-width: 100%;
+}
+
+
+/* .card-title {
+    font-size: 1.5vw;
+}
+
+.h2 {
+    font-size: 2vw;
+}
+
+h2 {
+    font-size: 1.5vw;
+} */
+
+
+/* @media only screen and (min-width: 620px) {
+    .card-title {
+        font-size: 2vw;
+    }
+    .h2 {
+        font-size: 2.5vw;
+    }
+    h2 {
+        font-size: 2vw;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .card-title {
+        font-size: 1.75vw;
+    }
+    .h2 {
+        font-size: 2.25vw;
+    }
+    h2 {
+        font-size: 1.75vw;
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    .card-title {
+        font-size: 1.5vw;
+    }
+    .h2 {
+        font-size: 2vw;
+    }
+    h2 {
+        font-size: 1.5vw;
+    }
+} */

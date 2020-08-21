@@ -46,7 +46,7 @@ function internInput(e) {
 
         console.log("e = ", e);
         let outputhtml = Render(e);
-        console.log("outputhtml = ", outputhtml);
+        // console.log("outputhtml = ", outputhtml);
 
     });
 
