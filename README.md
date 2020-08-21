@@ -1,4 +1,4 @@
-## The title of this project is Employee Summary generator.
+## The title of this project is an Employee Summary generator.
         
 License - [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
